@@ -1,0 +1,1664 @@
+version: "3.1"
+
+nlu:
+
+# --------------------------------------
+# 1. GREETINGS & CONVERSATION
+# --------------------------------------
+
+- intent: greet
+  examples: |
+    - hello
+    - hi
+    - hey
+    - good morning
+    - good evening
+    - namaste
+    - vanakkam
+    - hey there
+    - hi bot
+    - greetings
+    - good afternoon
+    - morning
+    - hey dude
+    - what's up
+    - howdy
+
+- intent: goodbye
+  examples: |
+    - bye
+    - goodbye
+    - see you later
+    - take care
+    - good night
+    - catch you later
+    - see ya
+    - talk to you soon
+    - bye bye
+    - cu
+    - see you around
+    - later
+    - I’m off
+    - farewell
+    - until next time
+
+- intent: thank_you
+  examples: |
+    - thanks
+    - thank you
+    - appreciate it
+    - thanks a lot
+    - cheers
+    - thank you so much
+    - grateful
+    - thanks bot
+    - thanks assistant
+    - thank you buddy
+    - thanks a ton
+    - thanks dear
+    - many thanks
+    - thanks for your help
+    - thanks friend
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+    - are you real?
+    - are you AI?
+    - are you a chatbot?
+    - are you a person?
+    - are you alive?
+    - are you a computer program?
+    - are you a machine?
+    - are you software?
+    - are you human or robot?
+    - are you virtual?
+    - are you automated?
+
+- intent: mood_great
+  examples: |
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - wonderful
+    - perfect
+    - super stoked
+    - extremely good
+    - so good
+    - so perfect
+    - feeling like a king
+    - I’m on top of the world
+    - I feel awesome
+    - I’m so happy
+    - everything is perfect
+    - I’m doing fantastic
+
+- intent: mood_unhappy
+  examples: |
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - my day was horrible
+    - I feel down
+    - I’m upset
+    - I’m depressed
+    - I’m not okay
+    - I feel terrible
+
+- intent: smalltalk_how_are_you
+  examples: |
+    - how are you?
+    - how are you doing?
+    - how’s it going?
+    - how do you feel?
+    - how are things?
+    - how are you today?
+    - how are you bot?
+    - how are you assistant?
+    - how are you friend?
+    - how are you doing today?
+    - how are you feeling?
+    - how’s your day?
+    - how are you holding up?
+    - how’s everything?
+    - how’s life?
+
+- intent: smalltalk_bot_capabilities
+  examples: |
+    - what can you do?
+    - tell me your skills
+    - what are your capabilities?
+    - what can you help with?
+    - what do you know?
+    - what services do you provide?
+    - what are you able to do?
+    - what tasks can you perform?
+    - what functions do you have?
+    - what can you answer?
+    - what’s your role?
+    - what are you good at?
+    - what’s your purpose?
+    - what can you explain?
+    - what’s your job?
+
+- intent: fallback
+  examples: |
+    - asdfgh
+    - qwerty
+    - random text
+    - nonsense words
+    - blah blah
+    - gibberish
+    - I don’t understand
+    - what did I just type
+    - meaningless input
+    - unknown question
+    - random letters
+    - test input
+    - nonsense query
+    - invalid text
+    - unrecognized words
+
+- intent: ask_loan_eligibility
+  examples: |
+    - am I eligible for a loan?
+    - check my loan eligibility
+    - can I get a loan?
+    - do I qualify for a loan?
+    - loan eligibility check
+    - am I qualified?
+    - tell me if I’m eligible
+    - check eligibility
+    - eligibility status
+    - loan qualification check
+    - do I meet the requirements?
+    - am I eligible for approval?
+    - can you check my eligibility?
+    - will I get a loan?
+    - am I eligible for loan sanction?
+
+- intent: ask_eligibility_age
+  examples: |
+    - age limit for loan?
+    - minimum age?
+    - age eligibility?
+    - how old should I be?
+    - age criteria?
+    - age requirement?
+    - age condition?
+    - age proof needed?
+    - age restrictions?
+    - age for loan?
+    - is 18 enough for loan?
+    - maximum age allowed?
+    - senior citizen eligibility?
+    - age rules for loan?
+    - age-based eligibility?
+
+- intent: ask_eligibility_income
+  examples: |
+    - minimum income for loan?
+    - salary needed?
+    - income eligibility?
+    - how much should I earn?
+    - income criteria?
+    - required salary?
+    - income limit?
+    - income proof needed?
+    - salary requirement?
+    - income condition?
+    - income rules for loan?
+    - income threshold?
+    - income-based eligibility?
+    - income requirement for approval?
+    - income check for loan?
+
+- intent: ask_eligibility_employment_type
+  examples: |
+    - should I be employed?
+    - job requirement?
+    - employment criteria?
+    - do I need a job?
+    - salaried or self-employed?
+    - employment status?
+    - job eligibility?
+    - working status?
+    - employment proof?
+    - job condition?
+    - freelancer eligibility?
+    - business owner eligibility?
+    - employment type rules?
+    - employment requirement?
+    - do unemployed qualify?
+
+- intent: ask_eligibility_credit_score
+  examples: |
+    - credit score requirement?
+    - minimum credit score?
+    - credit score eligibility?
+    - what credit score is needed?
+    - credit score criteria?
+    - credit score condition?
+    - credit score rules?
+    - credit score limit?
+    - credit score threshold?
+    - credit score check?
+    - credit score for approval?
+    - credit score for eligibility?
+    - credit score needed for loan?
+    - credit score requirement for sanction?
+    - credit score eligibility rules?
+
+- intent: ask_eligibility_min_salary
+  examples: |
+    - minimum salary for loan?
+    - salary requirement?
+    - salary eligibility?
+    - salary criteria?
+    - salary condition?
+    - salary rules?
+    - salary threshold?
+    - salary limit?
+    - salary check?
+    - salary needed for approval?
+    - salary requirement for loan?
+    - salary eligibility rules?
+    - salary-based eligibility?
+    - salary requirement for sanction?
+    - salary condition for loan?
+
+- intent: ask_eligibility_work_experience
+  examples: |
+    - work experience requirement?
+    - minimum work experience?
+    - work experience eligibility?
+    - work experience criteria?
+    - work experience condition?
+    - work experience rules?
+    - work experience threshold?
+    - work experience limit?
+    - work experience check?
+    - work experience needed for approval?
+    - work experience requirement for loan?
+    - work experience eligibility rules?
+    - work experience-based eligibility?
+    - work experience requirement for sanction?
+    - work experience condition for loan?
+
+- intent: ask_eligibility_for_students
+  examples: |
+    - can students apply?
+    - student loan info?
+    - loan for college?
+    - education loan?
+    - student eligibility?
+    - student loan options?
+    - loan for studies?
+    - student support?
+    - student criteria?
+    - student documents?
+    - student loan requirement?
+    - student loan eligibility?
+    - student loan condition?
+    - student loan rules?
+    - student loan sanction?
+
+- intent: ask_eligibility_for_salaried
+  examples: |
+    - salaried eligibility?
+    - salaried loan info?
+    - loan for salaried?
+    - salaried criteria?
+    - salaried documents?
+    - salaried requirement?
+    - salaried condition?
+    - salaried rules?
+    - salaried sanction?
+    - salaried support?
+    - salaried loan eligibility?
+    - salaried loan requirement?
+    - salaried loan condition?
+    - salaried loan rules?
+    - salaried loan sanction?
+
+- intent: ask_eligibility_for_self_employed
+  examples: |
+    - self-employed eligibility?
+    - self-employed loan info?
+    - loan for self-employed?
+    - self-employed criteria?
+    - self-employed documents?
+    - self-employed requirement?
+    - self-employed condition?
+    - self-employed rules?
+    - self-employed sanction?
+    - self-employed support?
+    - self-employed loan eligibility?
+    - self-employed loan requirement?
+    - self-employed loan condition?
+    - self-employed loan rules?
+    - self-employed loan sanction?
+
+- intent: ask_eligibility_for_business_owner
+  examples: |
+    - business owner eligibility?
+    - business owner loan info?
+    - loan for business owner?
+    - business owner criteria?
+    - business owner documents?
+    - business owner requirement?
+    - business owner condition?
+    - business owner rules?
+    - business owner sanction?
+    - business owner support?
+    - business owner loan eligibility?
+    - business owner loan requirement?
+    - business owner loan condition?
+    - business owner loan rules?
+    - business owner loan sanction?
+
+- intent: ask_eligibility_for_pensioners
+  examples: |
+    - pensioner eligibility?
+    - pensioner loan info?
+    - loan for pensioner?
+    - pensioner criteria?
+    - pensioner documents?
+    - pensioner requirement?
+    - pensioner condition?
+    - pensioner rules?
+    - pensioner sanction?
+    - pensioner support?
+    - pensioner loan eligibility?
+    - pensioner loan requirement?
+    - pensioner loan condition?
+    - pensioner loan rules?
+    - pensioner loan sanction?
+
+- intent: ask_eligibility_rejection_reasons
+  examples: |
+    - why was my loan rejected?
+    - reason for rejection?
+    - loan not approved?
+    - what went wrong?
+    - rejection cause?
+    - why didn’t I qualify?
+    - loan denial reason?
+    - rejection info?
+    - failed eligibility?
+    - loan disqualified?
+    - rejection explanation?
+    - rejection details?
+    - rejection rules?
+    - rejection condition?
+    - rejection sanction?
+
+- intent: ask_eligibility_using_coapplicant
+  examples: |
+    - coapplicant eligibility?
+    - coapplicant loan info?
+    - loan with coapplicant?
+    - coapplicant criteria?
+    - coapplicant documents?
+    - coapplicant requirement?
+    - coapplicant condition?
+    - coapplicant rules?
+    - coapplicant sanction?
+    - coapplicant support?
+    - coapplicant loan eligibility?
+    - coapplicant loan requirement?
+    - coapplicant loan condition?
+    - coapplicant loan rules?
+    - coapplicant loan sanction?
+
+- intent: ask_coapplicant_rules
+  examples: |
+    - coapplicant rules?
+    - coapplicant eligibility?
+    - coapplicant criteria?
+    - coapplicant documents?
+    - coapplicant requirement?
+    - coapplicant condition?
+    - coapplicant sanction?
+    - coapplicant support?
+    - coapplicant loan eligibility?
+    - coapplicant loan requirement?
+    - coapplicant loan condition?
+    - coapplicant loan rules?
+    - coapplicant loan sanction?
+    - coapplicant loan info?
+    - coapplicant loan details?
+
+- intent: ask_guarantor_requirement
+  examples: |
+    - guarantor requirement?
+    - guarantor eligibility?
+    - guarantor criteria?
+    - guarantor documents?
+    - guarantor requirement?
+    - guarantor condition?
+    - guarantor rules?
+    - guarantor sanction?
+    - guarantor support?
+    - guarantor loan eligibility?
+    - guarantor loan requirement?
+    - guarantor loan condition?
+    - guarantor loan rules?
+    - guarantor loan sanction?
+    - guarantor loan info?
+
+- intent: ask_personal_loan_info
+  examples: |
+    - tell me about personal loans
+    - what is a personal loan?
+    - personal loan details
+    - explain personal loan
+    - personal loan eligibility
+    - personal loan requirements
+    - personal loan documents
+    - personal loan interest rate
+    - personal loan tenure
+    - personal loan features
+    - personal loan conditions
+    - personal loan rules
+    - personal loan info
+    - personal loan process
+    - personal loan application
+
+- intent: ask_home_loan_info
+  examples: |
+    - tell me about home loans
+    - what is a home loan?
+    - home loan details
+    - explain home loan
+    - home loan eligibility
+    - home loan requirements
+    - home loan documents
+    - home loan interest rate
+    - home loan tenure
+    - home loan features
+    - home loan conditions
+    - home loan rules
+    - home loan info
+    - home loan process
+    - home loan application
+
+- intent: ask_car_loan_info
+  examples: |
+    - tell me about car loans
+    - what is a car loan?
+    - car loan details
+    - explain car loan
+    - car loan eligibility
+    - car loan requirements
+    - car loan documents
+    - car loan interest rate
+    - car loan tenure
+    - car loan features
+    - car loan conditions
+    - car loan rules
+    - car loan info
+    - car loan process
+    - car loan application
+
+- intent: ask_education_loan_info
+  examples: |
+    - tell me about education loans
+    - what is an education loan?
+    - education loan details
+    - explain education loan
+    - education loan eligibility
+    - education loan requirements
+    - education loan documents
+    - education loan interest rate
+    - education loan tenure
+    - education loan features
+    - education loan conditions
+    - education loan rules
+    - education loan info
+    - education loan process
+    - education loan application
+
+- intent: ask_business_loan_info
+  examples: |
+    - tell me about business loans
+    - what is a business loan?
+    - business loan details
+    - explain business loan
+    - business loan eligibility
+    - business loan requirements
+    - business loan documents
+    - business loan interest rate
+    - business loan tenure
+    - business loan features
+    - business loan conditions
+    - business loan rules
+    - business loan info
+    - business loan process
+    - business loan application
+
+- intent: ask_gold_loan_info
+  examples: |
+    - tell me about gold loans
+    - what is a gold loan?
+    - gold loan details
+    - explain gold loan
+    - gold loan eligibility
+    - gold loan requirements
+    - gold loan documents
+    - gold loan interest rate
+    - gold loan tenure
+    - gold loan features
+    - gold loan conditions
+    - gold loan rules
+    - gold loan info
+    - gold loan process
+    - gold loan application
+
+- intent: ask_topup_loan_info
+  examples: |
+    - tell me about top-up loans
+    - what is a top-up loan?
+    - top-up loan details
+    - explain top-up loan
+    - top-up loan eligibility
+    - top-up loan requirements
+    - top-up loan documents
+    - top-up loan interest rate
+    - top-up loan tenure
+    - top-up loan features
+    - top-up loan conditions
+    - top-up loan rules
+    - top-up loan info
+    - top-up loan process
+    - top-up loan application
+
+- intent: ask_balance_transfer_info
+  examples: |
+    - tell me about balance transfer
+    - what is a balance transfer loan?
+    - balance transfer details
+    - explain balance transfer
+    - balance transfer eligibility
+    - balance transfer requirements
+    - balance transfer documents
+    - balance transfer interest rate
+    - balance transfer tenure
+    - balance transfer features
+    - balance transfer conditions
+    - balance transfer rules
+    - balance transfer info
+    - balance transfer process
+    - balance transfer application
+
+- intent: ask_max_loan_amount
+  examples: |
+    - what is the maximum loan amount?
+    - how much loan can I get?
+    - tell me the highest loan amount
+    - what’s the loan limit?
+    - maximum loan eligibility
+    - what is the upper loan cap?
+    - highest loan amount possible
+    - what’s the maximum loan I qualify for?
+    - how much can I borrow at most?
+    - loan amount ceiling
+    - what’s the largest loan available?
+    - maximum loan sanctioned
+    - what’s the top loan amount?
+    - highest loan eligibility
+    - what’s the maximum loan limit?
+
+- intent: ask_min_loan_amount
+  examples: |
+    - what is the minimum loan amount?
+    - lowest loan I can apply for
+    - what’s the smallest loan available?
+    - minimum loan eligibility
+    - what is the least loan amount?
+    - what’s the minimum loan I qualify for?
+    - tell me the minimum loan
+    - what’s the lowest loan sanctioned?
+    - minimum loan requirement
+    - what’s the minimum loan limit?
+    - smallest loan amount possible
+    - minimum loan condition
+    - what’s the least loan offered?
+    - minimum loan rules
+    - minimum loan criteria
+
+- intent: ask_loan_tenure_options
+  examples: |
+    - what are the loan tenure options?
+    - available loan durations
+    - loan repayment periods
+    - tenure choices for loan
+    - what’s the loan term?
+    - loan tenure details
+    - repayment time options
+    - tenure flexibility
+    - loan duration choices
+    - tenure info
+    - loan tenure range
+    - repayment period options
+    - tenure conditions
+    - loan tenure rules
+    - tenure eligibility
+
+- intent: ask_max_tenure
+  examples: |
+    - what is the maximum tenure?
+    - longest repayment period
+    - maximum loan duration
+    - what’s the upper tenure limit?
+    - longest loan term
+    - maximum repayment time
+    - tenure ceiling
+    - highest tenure allowed
+    - maximum loan tenure
+    - longest loan repayment option
+    - tenure cap
+    - maximum loan years
+    - maximum repayment months
+    - longest tenure possible
+    - maximum loan term
+
+- intent: ask_loan_limit_based_on_salary
+  examples: |
+    - loan limit based on salary?
+    - how much loan can I get with my salary?
+    - salary to loan eligibility
+    - loan amount linked to salary
+    - loan limit for my income
+    - salary-based loan calculation
+    - loan eligibility by salary
+    - loan amount based on monthly income
+    - salary to loan ratio
+    - loan limit for salaried person
+    - income-based loan limit
+    - loan amount based on salary
+    - salary loan eligibility
+    - loan limit calculation by salary
+    - loan sanctioned based on salary
+
+- intent: ask_salary_to_loan_ratio
+  examples: |
+    - what is the salary to loan ratio?
+    - salary vs loan eligibility
+    - ratio of salary to loan
+    - how much loan per salary
+    - salary loan ratio info
+    - salary to loan calculation
+    - salary vs loan limit
+    - loan ratio based on salary
+    - salary loan proportion
+    - salary loan comparison
+    - salary loan eligibility ratio
+    - salary loan percentage
+    - salary loan rules
+    - salary loan condition
+    - salary loan criteria
+
+- intent: ask_dti_ratio_info
+  examples: |
+    - what is debt-to-income ratio?
+    - explain DTI ratio
+    - DTI ratio details
+    - how does DTI affect loan?
+    - DTI ratio eligibility
+    - DTI ratio requirement
+    - DTI ratio calculation
+    - DTI ratio rules
+    - DTI ratio condition
+    - DTI ratio info
+    - DTI ratio threshold
+    - DTI ratio limit
+    - DTI ratio criteria
+    - DTI ratio sanction
+    - DTI ratio explanation
+
+- intent: ask_application_status
+  examples: |
+    - what is my loan application status?
+    - check my application status
+    - loan approval status?
+    - track my loan
+    - track application
+    - where is my loan?
+    - is my loan approved?
+    - has my loan been sanctioned?
+    - update loan status
+    - check loan progress
+    - loan status info
+    - loan application update
+    - status of my application
+    - application tracking
+    - how is my loan progressing?
+
+- intent: ask_processing_time
+  examples: |
+    - how long will loan processing take?
+    - loan approval time?
+    - processing duration?
+    - when will I get my loan?
+    - time for approval?
+    - how much time for loan?
+    - application processing time?
+    - sanction time?
+    - verification time?
+    - loan approval duration
+    - processing speed
+    - loan decision time
+    - time required for loan sanction
+    - time for loan disbursement
+    - loan approval period
+
+- intent: ask_application_delay_reasons
+  examples: |
+    - why is my application delayed?
+    - reason for application delay?
+    - application taking too long
+    - loan delay cause?
+    - why is loan still pending?
+    - delayed approval reason?
+    - delay in sanction?
+    - what slowed down my loan?
+    - delay explanation?
+    - why no update yet?
+    - pending loan reason
+    - slow application processing
+    - delay in verification
+    - loan taking long time
+    - cause of delay?
+
+- intent: ask_verification_steps
+  examples: |
+    - what are the verification steps?
+    - explain loan verification
+    - how is my data verified?
+    - verification process?
+    - loan checking procedure?
+    - how do you verify documents?
+    - steps in verification
+    - eligibility verification steps
+    - how is income verified?
+    - employment verification?
+    - bank statement verification?
+    - address verification steps
+    - how do you confirm details?
+    - what happens during verification?
+    - verification workflow
+
+- intent: ask_why_additional_documents_needed
+  examples: |
+    - why do you need extra documents?
+    - reason for asking additional documents?
+    - why more papers?
+    - why more proofs needed?
+    - document resubmission reason?
+    - why document clarification?
+    - extra document request?
+    - why further documentation?
+    - need more documents?
+    - clarification documents?
+    - additional paperwork?
+    - extra document explanation?
+    - why new documents?
+    - more documents asked?
+    - document recheck reason?
+
+- intent: ask_emi_amount
+  examples: |
+    - what will be my EMI?
+    - calculate EMI
+    - EMI amount?
+    - how much EMI do I need to pay?
+    - monthly payment?
+    - EMI calculation?
+    - EMI details
+    - expected EMI?
+    - monthly installment?
+    - EMI info
+    - what is my monthly due?
+    - estimate EMI
+    - EMI breakdown
+    - EMI structure
+    - EMI payable amount
+
+- intent: ask_emi_due_date
+  examples: |
+    - when is my EMI due?
+    - EMI payment date?
+    - what is the due date for EMI?
+    - monthly due date?
+    - EMI date information?
+    - next EMI date?
+    - EMI cycle?
+    - EMI deadline?
+    - EMI billing date?
+    - when should I pay EMI?
+    - EMI schedule
+    - EMI month-end date?
+    - EMI start date?
+    - EMI payment timeline?
+    - EMI debit date?
+
+- intent: ask_emi_change_possibility
+  examples: |
+    - can I change my EMI?
+    - is it possible to modify EMI?
+    - can EMI be reduced?
+    - can EMI be increased?
+    - EMI change request
+    - EMI adjustment?
+    - can EMI be altered?
+    - EMI modification rules?
+    - how to change EMI?
+    - change repayment amount?
+    - EMI revision?
+    - EMI restructuring?
+    - EMI reschedule?
+    - EMI flexibility?
+    - EMI customization?
+
+- intent: ask_missed_emi_consequences
+  examples: |
+    - what happens if I miss EMI?
+    - consequences of missing EMI?
+    - missed EMI penalty?
+    - missed payment impact?
+    - EMI skip penalty?
+    - what if EMI is unpaid?
+    - EMI default results?
+    - late EMI effects?
+    - missed EMI rules?
+    - EMI failure consequences?
+    - EMI non-payment issue?
+    - EMI miss explanation?
+    - EMI overdue impact?
+    - defaulting EMI?
+    - EMI miss penalty amount
+
+- intent: ask_processing_fee
+  examples: |
+    - what is the processing fee?
+    - processing fee amount?
+    - loan processing charges?
+    - processing fee details?
+    - how much is the processing fee?
+    - processing cost?
+    - processing fee info
+    - loan application fee
+    - processing charges
+    - processing fee breakdown
+    - processing fee structure
+    - processing fee requirement?
+    - processing fee rules
+    - processing fee explanation
+    - processing fee conditions
+
+- intent: ask_penal_interest
+  examples: |
+    - what is penal interest?
+    - penalty interest?
+    - overdue penalty?
+    - interest for late payment?
+    - late fee charges?
+    - overdue interest rate?
+    - penal charges?
+    - late EMI interest?
+    - overdue fine?
+    - penalty info
+    - penal rate?
+    - penalty added?
+    - interest if EMI missed?
+    - what’s the penalty rate?
+    - penalty details?
+
+- intent: ask_prepayment_rules
+  examples: |
+    - what are prepayment rules?
+    - can I prepay my loan?
+    - preclosure rules?
+    - loan foreclosure?
+    - foreclosure fees?
+    - part payment rules?
+    - prepayment charges?
+    - advance payment?
+    - early repayment?
+    - early closure?
+    - loan prepayment info
+    - closing loan early?
+    - preclosure penalty?
+    - prepay loan amount?
+    - early settlement?
+
+- intent: ask_required_documents
+  examples: |
+    - what documents are required?
+    - loan documents needed?
+    - list of required documents?
+    - required papers for loan?
+    - what proofs do I need?
+    - document checklist?
+    - which documents should I submit?
+    - documents for applying?
+    - what docs are needed?
+    - required documentation?
+    - document requirements?
+    - loan documentation details?
+    - document submission?
+    - what paperwork is needed?
+    - must-have documents?
+
+- intent: ask_kyc_documents
+  examples: |
+    - what KYC documents are needed?
+    - KYC requirements?
+    - KYC verification documents?
+    - KYC checklist?
+    - identity proof needed?
+    - address proof needed?
+    - KYC submission?
+    - KYC papers?
+    - which KYC documents to submit?
+    - KYC rules?
+    - KYC conditions?
+    - KYC documents for loan?
+    - valid KYC proofs?
+    - list of KYC documents?
+    - acceptable KYC documents?
+
+- intent: ask_income_documents
+  examples: |
+    - what income documents are required?
+    - salary slips needed?
+    - income proof for loan?
+    - what income proofs do I need?
+    - income verification documents?
+    - income papers?
+    - bank statements needed?
+    - what salary documents?
+    - proof of income required?
+    - income documentation?
+    - income documents checklist?
+    - income proof submission?
+    - income docs for loan?
+    - income papers required?
+    - salary documents needed?
+
+- intent: ask_address_proof_documents
+  examples: |
+    - what address proof documents are accepted?
+    - address proof required?
+    - valid address documents?
+    - what can I use for address proof?
+    - address documentation?
+    - address verification proof?
+    - list of address proofs?
+    - acceptable address proofs?
+    - address proof checklist?
+    - submitting address proof?
+    - address docs for loan?
+    - required address papers?
+    - address-related documents?
+    - address proof rules?
+    - address proof conditions?
+
+- intent: ask_identity_proof_documents
+  examples: |
+    - what identity proof is required?
+    - identity documents needed?
+    - ID proof requirement?
+    - valid ID proofs?
+    - which ID should I submit?
+    - identity verification docs?
+    - ID documentation?
+    - list of identity proofs?
+    - acceptable IDs?
+    - ID proof checklist?
+    - government ID needed?
+    - ID papers required?
+    - identity proof rules?
+    - identity proof conditions?
+    - identity verification papers?
+
+- intent: ask_employment_documents
+  examples: |
+    - what employment documents are needed?
+    - job proof required?
+    - employment verification documents?
+    - employment letter needed?
+    - offer letter needed?
+    - job confirmation letter?
+    - employment documentation?
+    - work proof submission?
+    - job docs for loan?
+    - employment-related papers?
+    - employment certificate needed?
+    - employment records required?
+    - work experience letter?
+    - employee ID proof?
+    - job verification documents?
+
+- intent: ask_bank_statement_requirement
+  examples: |
+    - are bank statements required?
+    - bank statement documents?
+    - how many months bank statements?
+    - bank statement rules?
+    - do I need bank statements for loan?
+    - bank statements for verification?
+    - bank statement requirement?
+    - bank records needed?
+    - statement of accounts?
+    - bank statement submission?
+    - bank statement checklist?
+    - bank statement condition?
+    - statement duration requirement?
+    - bank statement docs?
+    - bank statement proof?
+
+- intent: ask_documents_for_business_loan
+  examples: |
+    - documents for business loan?
+    - business loan paperwork?
+    - business proof needed?
+    - business registration documents?
+    - financial statements required?
+    - business loan documentation?
+    - business loan document list?
+    - business tax returns?
+    - GST documents?
+    - business address proof?
+    - business papers required?
+    - business docs checklist?
+    - business balance sheet?
+    - profit and loss statements?
+    - business license documents?
+
+- intent: ask_how_to_apply
+  examples: |
+    - how do I apply for a loan?
+    - loan application process?
+    - tell me steps to apply
+    - application procedure?
+    - how to submit application?
+    - loan apply method?
+    - how can I apply?
+    - application steps?
+    - guide me to apply
+    - loan application instructions
+    - where can I apply?
+    - applying for loan details
+    - how to start application?
+    - online application process?
+    - application submission steps?
+
+- intent: ask_online_application
+  examples: |
+    - can I apply online?
+    - online loan option?
+    - how to apply through website?
+    - mobile application for loan?
+    - online application steps?
+    - can I submit online?
+    - apply digitally?
+    - online loan submission?
+    - digital loan request?
+    - website loan application?
+    - apply online details?
+    - online eligibility check?
+    - upload documents online?
+    - online verification?
+    - online loan status?
+
+- intent: ask_offline_application
+  examples: |
+    - can I apply offline?
+    - is there an offline process?
+    - branch application?
+    - apply at branch?
+    - offline loan procedure?
+    - manual application?
+    - where to submit offline?
+    - physical form submission?
+    - offline verification?
+    - branch visit needed?
+    - offline loan instructions?
+    - offline process steps?
+    - paper-based application?
+    - in-person loan application?
+    - offline method?
+
+- intent: ask_application_requirements
+  examples: |
+    - what do I need for application?
+    - requirements for application?
+    - what is needed to apply?
+    - pre-requisites for loan?
+    - what should I have to apply?
+    - documents and requirements?
+    - application needs?
+    - must-haves for applying?
+    - application essentials?
+    - before applying what is needed?
+    - things required for loan application?
+    - preparation for application?
+    - what info is needed to apply?
+    - what details must I provide?
+    - application rules?
+
+- intent: ask_application_tracking
+  examples: |
+    - how do I track my application?
+    - track my loan?
+    - check application status?
+    - application monitoring?
+    - tracking details?
+    - online tracking?
+    - status tracking?
+    - where can I track application?
+    - tracking link?
+    - application number tracking?
+    - loan monitoring?
+    - loan progress check?
+    - how to track loan online?
+    - tracking my submission?
+    - update on my application?
+
+- intent: ask_disbursement_time
+  examples: |
+    - when will the loan be disbursed?
+    - disbursement time?
+    - money credit time?
+    - how long for disbursement?
+    - disbursement processing?
+    - loan payout time?
+    - fund transfer duration?
+    - when will I receive money?
+    - disbursement schedule?
+    - payout timeline?
+    - loan credit time?
+    - disbursement period?
+    - time for money release?
+    - fund disbursement details?
+    - credit timeline?
+
+- intent: ask_post_sanction_steps
+  examples: |
+    - what happens after sanction?
+    - post sanction process?
+    - next steps after approval?
+    - after loan is approved?
+    - what to do after sanction?
+    - steps after sanction?
+    - post approval procedure?
+    - after sanction instructions?
+    - post-sank process?
+    - loan disbursement process?
+    - post-approval timeline?
+    - after sanction details?
+    - post sanction guidelines?
+    - post sanction flow?
+    - actions after approval?
+
+- intent: ask_mandate_setup
+  examples: |
+    - how do I set up mandate?
+    - mandate registration?
+    - NACH setup?
+    - auto debit setup?
+    - mandate process?
+    - mandate form?
+    - online mandate?
+    - mandate instructions?
+    - mandate requirement?
+    - NACH instructions?
+    - debit mandate setup?
+    - EMI auto debit?
+    - mandate activation?
+    - mandate rules?
+    - e-mandate process?
+
+- intent: ask_interest_rate
+  examples: |
+    - what is the interest rate?
+    - current interest rate?
+    - loan interest details?
+    - rate of interest?
+    - what interest do you charge?
+    - interest percentage?
+    - applicable ROI?
+    - interest rate info?
+    - how much is the ROI?
+    - loan interest amount?
+    - interest rate factors?
+    - interest rate rules?
+    - ROI details?
+    - interest rate breakdown?
+    - what’s today’s interest rate?
+
+- intent: ask_fixed_or_floating_rate
+  examples: |
+    - is the rate fixed or floating?
+    - fixed rate?
+    - floating interest?
+    - variable rate?
+    - does rate change?
+    - what type of interest?
+    - fixed vs floating?
+    - loan type interest?
+    - which rate applies?
+    - floating rate rules?
+    - fixed rate conditions?
+    - interest type selection?
+    - rate stability?
+    - interest variability?
+    - fixed interest loan info?
+
+- intent: ask_how_interest_is_calculated
+  examples: |
+    - how is interest calculated?
+    - interest calculation method?
+    - calculation of ROI?
+    - how do you compute interest?
+    - interest formula?
+    - how is ROI derived?
+    - interest computation?
+    - interest calculation rules?
+    - how loan interest works?
+    - interest math?
+    - monthly interest calculation?
+    - interest breakdown?
+    - how interest is applied?
+    - interest calculation explanation?
+    - interest logic?
+
+- intent: ask_effective_interest_rate
+  examples: |
+    - what is effective interest rate?
+    - explain EIR?
+    - difference between nominal and effective rate?
+    - EIR meaning?
+    - effective ROI?
+    - EIR explanation?
+    - EIR details?
+    - EIR calculation?
+    - effective rate info?
+    - actual interest rate?
+    - true cost of loan?
+    - effective rate rules?
+    - EIR conditions?
+    - EIR formula?
+    - EIR breakdown?
+
+- intent: ask_why_interest_rate_differs
+  examples: |
+    - why does interest rate differ?
+    - reason for rate variation?
+    - why different ROI?
+    - what affects interest rate?
+    - why interest rate not same for everyone?
+    - factors affecting ROI?
+    - interest depends on what?
+    - why is my rate higher?
+    - why is my rate lower?
+    - interest rate calculation factors?
+    - interest variation reason?
+    - rate fluctuation cause?
+    - why different rates?
+    - interest rate criteria?
+    - ROI explanation?
+
+- intent: ask_current_offers
+  examples: |
+    - what offers do you have?
+    - current discounts?
+    - any deals available?
+    - loan offers?
+    - promotional offers?
+    - festival offers?
+    - special offers?
+    - discounts on processing fees?
+    - any special benefits?
+    - offer details?
+    - running schemes?
+    - seasonal benefits?
+    - offer info?
+    - offers for new customers?
+    - any cashback?
+
+- intent: ask_loyalty_benefits
+  examples: |
+    - do you have loyalty benefits?
+    - benefits for existing customers?
+    - loyalty scheme?
+    - long-term customer benefits?
+    - returning customer perks?
+    - loyalty bonus?
+    - relationship benefits?
+    - loyalty rewards?
+    - loyalty discount?
+    - benefits for repeat borrowers?
+    - special benefits for loyal users?
+    - loyalty program?
+    - loyalty incentives?
+    - loyal customer advantages?
+    - customer loyalty offers?
+
+- intent: ask_employee_special_schemes
+  examples: |
+    - do employees get special loans?
+    - employee schemes?
+    - benefits for employees?
+    - employee discount?
+    - employee interest rate?
+    - staff loan program?
+    - staff benefits?
+    - staff loan details?
+    - employee loan rules?
+    - employee loan eligibility?
+    - employee concessions?
+    - special rate for employees?
+    - employee loan info?
+    - staff loan interest?
+    - employee advantages?
+
+- intent: ask_how_to_raise_complaint
+  examples: |
+    - how do I raise a complaint?
+    - complaint process?
+    - how to report an issue?
+    - file complaint?
+    - raise ticket?
+    - report problem?
+    - complaint submission?
+    - grievance redressal?
+    - complaint form?
+    - where to complain?
+    - complaint hotline?
+    - customer support complaint?
+    - issue reporting?
+    - complaint instructions?
+    - complaint registration?
+
+- intent: ask_customer_support
+  examples: |
+    - how do I contact customer support?
+    - customer care number?
+    - support details?
+    - helpdesk contact?
+    - support helpline?
+    - how to get help?
+    - where is customer support?
+    - support center?
+    - customer care email?
+    - support options?
+    - technical support?
+    - loan support?
+    - contact helpdesk?
+    - customer service?
+    - support team details?
+
+- intent: ask_branch_locator
+  examples: |
+    - where is the nearest branch?
+    - branch location?
+    - find branch near me
+    - nearby office?
+    - loan branch location?
+    - branch finder?
+    - nearest office address?
+    - how to locate branch?
+    - find nearest branch
+    - branch search?
+    - nearest branch details?
+    - office location?
+    - branch map?
+    - where is your office?
+    - nearest loan center?
+
+- intent: ask_update_mobile_number
+  examples: |
+    - how do I update my mobile number?
+    - change phone number?
+    - update contact number?
+    - mobile number change request?
+    - number update process?
+    - update my phone details?
+    - mobile update instructions?
+    - change registered number?
+    - mobile change for loan account?
+    - phone number correction?
+    - update mobile for EMI?
+    - request to update mobile?
+    - mobile number modification?
+    - contact number change?
+    - mobile number update info?
+
+- intent: ask_update_address
+  examples: |
+    - how do I update my address?
+    - change address details?
+    - update my home address?
+    - address change process?
+    - address modification?
+    - address update request?
+    - how to change address?
+    - update address in loan account?
+    - address change form?
+    - address correction?
+    - new address update?
+    - address update instructions?
+    - address updating method?
+    - correct my address?
+    - update address proof?
+
+- intent: ask_update_email
+  examples: |
+    - how do I update my email?
+    - change email address?
+    - update registered email?
+    - email update request?
+    - correct my email?
+    - new email submission?
+    - modify email details?
+    - update email ID?
+    - email correction?
+    - email address change?
+    - email update process?
+    - update email in loan account?
+    - change registered email ID?
+    - update email instructions?
+    - email modification?
+
+- intent: ask_reset_password
+  examples: |
+    - how do I reset my password?
+    - forgot password?
+    - password reset?
+    - reset login password?
+    - recover password?
+    - password help?
+    - lost password?
+    - create new password?
+    - change my password?
+    - password recovery link?
+    - password instructions?
+    - set new password?
+    - forgot my login?
+    - login reset?
+    - password modification?
+
+- intent: ask_loan_definition
+  examples: |
+    - what is a loan?
+    - explain loan
+    - meaning of loan?
+    - loan concept?
+    - loan basics?
+    - simple definition of loan?
+    - what does loan mean?
+    - loan meaning explanation?
+    - how do loans work?
+    - loan overview?
+    - what is borrowing?
+    - purpose of loans?
+    - loan introduction?
+    - basic loan info?
+    - loan explanation?
+
+- intent: ask_difference_unsecured_secured
+  examples: |
+    - difference between secured and unsecured loan?
+    - secured vs unsecured?
+    - what is a secured loan?
+    - what is an unsecured loan?
+    - explain security in loans
+    - secured loan example?
+    - unsecured loan example?
+    - difference in security?
+    - collateral vs no collateral?
+    - secured/unsecured meaning?
+    - secured vs non-secured loans?
+    - which loan is secured?
+    - which loan needs security?
+    - secured vs unsecured explanation?
+    - types of loans based on security?
+
+- intent: ask_collateral_definition
+  examples: |
+    - what is collateral?
+    - meaning of collateral?
+    - explain collateral
+    - collateral in loan?
+    - what does collateral mean?
+    - collateral example?
+    - collateral requirement?
+    - security asset meaning?
+    - collateral definition?
+    - why collateral needed?
+    - collateral concept?
+    - collateral usage?
+    - collateral rules?
+    - what counts as collateral?
+    - define collateral?
+
+- intent: ask_why_documents_needed
+  examples: |
+    - why are documents required?
+    - why do you need my documents?
+    - purpose of documentation?
+    - why so many documents?
+    - document requirement reason?
+    - need for documentation?
+    - why proofs needed?
+    - why verification documents?
+    - why income proof needed?
+    - why KYC needed?
+    - why personal documents?
+    - reason for submitting documents?
+    - why is paperwork mandatory?
+    - why documents for loan?
+    - documentation explanation?
+
+- intent: ask_charges_breakdown
+  examples: |
+    - what charges are included?
+    - breakdown of fees?
+    - what extra charges apply?
+    - loan fee list?
+    - charges applicable?
+    - loan cost details?
+    - cost structure?
+    - processing + other charges?
+    - loan fee explanation?
+    - what all fees are there?
+    - charges included in loan?
+    - what costs should I expect?
+    - extra cost details?
+    - complete fee structure?
+    - loan charges info?
+
+- intent: ask_turnaround_time
+  examples: |
+    - what is the turnaround time?
+    - TAT for loan?
+    - total time for loan process?
+    - how long for complete loan?
+    - TAT meaning?
+    - TAT details?
+    - turnaround time info?
+    - overall processing time?
+    - time for end-to-end loan?
+    - TAT of loan approval?
+    - TAT of disbursement?
+    - loan TAT details?
+    - total loan timeline?
+    - complete application timeline?
+    - end-to-end process time?
+
+- intent: ask_loan_rejection_again
+  examples: |
+    - can I apply again after rejection?
+    - reapply after rejection?
+    - loan rejected, what next?
+    - can I submit again?
+    - how soon can I reapply?
+    - rejected loan reapply rules?
+    - retry loan application?
+    - apply again rules?
+    - can I try again?
+    - rejected application recovery?
+    - reapplication conditions?
+    - rejected—apply again?
+    - second attempt for loan?
+    - reapply process?
+    - reapply eligibility?
+
+- intent: ask_multiple_loans
+  examples: |
+    - can I take multiple loans?
+    - is it allowed to have more than one loan?
+    - can I apply for two loans?
+    - multiple loan rules?
+    - 2 loans at same time?
+    - multiple loan eligibility?
+    - can I hold multiple active loans?
+    - multiple loan approval?
+    - rules for 2nd loan?
+    - can I take additional loan?
+    - multiple loan info?
+    - multiple borrowing?
+    - apply for extra loan?
+    - take new loan with existing loan?
+    - second loan eligibility?
+
+- intent: ask_loan_closure_process
+  examples: |
+    - how do I close my loan?
+    - loan closure process?
+    - how to end my loan?
+    - loan settlement?
+    - foreclosure steps?
+    - how do I complete loan repayment?
+    - closure procedure?
+    - loan closure info?
+    - how to finish loan?
+    - loan account closure?
+    - loan final settlement?
+    - close loan instructions?
+    - foreclosure request?
+    - loan settlement rules?
+    - close loan early?
+

@@ -1,0 +1,483 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - thank_you
+  - thank
+  - bot_challenge
+  - mood_great
+  - mood_unhappy
+  - smalltalk_how_are_you
+  - smalltalk_bot_capabilities
+  - fallback
+  - loan_eligibility_start
+  - provide_information
+  - affirm
+  - deny
+  - out_of_scope
+  # --- all question/intents from NLU ---
+  - ask_loan_eligibility
+  - ask_eligibility_age
+  - ask_eligibility_income
+  - ask_eligibility_employment_type
+  - ask_eligibility_credit_score
+  - ask_eligibility_min_salary
+  - ask_eligibility_work_experience
+  - ask_eligibility_for_students
+  - ask_eligibility_for_salaried
+  - ask_eligibility_for_self_employed
+  - ask_eligibility_for_business_owner
+  - ask_eligibility_for_pensioners
+  - ask_eligibility_rejection_reasons
+  - ask_eligibility_using_coapplicant
+  - ask_coapplicant_rules
+  - ask_guarantor_requirement
+  - ask_max_loan_amount
+  - ask_min_loan_amount
+  - ask_loan_tenure_options
+  - ask_max_tenure
+  - ask_loan_limit_based_on_salary
+  - ask_salary_to_loan_ratio
+  - ask_dti_ratio_info
+  - ask_personal_loan_info
+  - ask_home_loan_info
+  - ask_car_loan_info
+  - ask_education_loan_info
+  - ask_business_loan_info
+  - ask_gold_loan_info
+  - ask_topup_loan_info
+  - ask_balance_transfer_info
+  - ask_processing_fee
+  - ask_penal_interest
+  - ask_prepayment_rules
+  - ask_emi_amount
+  - ask_emi_due_date
+  - ask_emi_change_possibility
+  - ask_missed_emi_consequences
+  - ask_verification_steps
+  - ask_why_additional_documents_needed
+  - ask_application_status
+  - ask_processing_time
+  - ask_application_delay_reasons
+  - ask_credit_score_requirement
+  - ask_improve_credit_score
+  - ask_why_credit_score_low
+  - ask_home_visit_requirement
+  - ask_employment_verification_process
+  - ask_bank_statement_analysis
+  - ask_disbursement_time
+  - ask_post_sanction_steps
+  - ask_mandate_setup
+  - ask_how_to_apply
+  - ask_online_application
+  - ask_offline_application
+  - ask_application_requirements
+  - ask_application_tracking
+  - ask_required_documents
+  - ask_kyc_documents
+  - ask_income_documents
+  - ask_address_proof_documents
+  - ask_identity_proof_documents
+  - ask_employment_documents
+  - ask_bank_statement_requirement
+  - ask_documents_for_business_loan
+  - ask_loan_definition
+  - ask_difference_unsecured_secured
+  - ask_collateral_definition
+  - ask_why_documents_needed
+  - ask_charges_breakdown
+  - ask_turnaround_time
+  - ask_loan_rejection_again
+  - ask_multiple_loans
+  - ask_loan_closure_process
+  - ask_update_mobile_number
+  - ask_update_address
+  - ask_update_email
+  - ask_reset_password
+  - ask_how_to_raise_complaint
+  - ask_customer_support
+  - ask_branch_locator
+  - ask_current_offers
+  - ask_loyalty_benefits
+  - ask_employee_special_schemes
+  - ask_interest_rate
+  - ask_fixed_or_floating_rate
+  - ask_how_interest_is_calculated
+  - ask_effective_interest_rate
+  - ask_why_interest_rate_differs
+
+entities:
+  - username
+  - gender
+  - marital_status
+  - dependents
+  - education
+  - age
+  - job_title
+  - annual_salary
+  - collateral_value
+  - savings_balance
+  - employment_type
+  - employment_duration
+  - previous_loan_status
+  - previous_loan_amount
+  - monthly_emi
+  - loan_purpose
+  - loan_amount
+  - repayment_term
+  - additional_income
+  - credit_cards
+  - credit_utilization
+  - late_payment_history
+  - loan_insurance
+
+slots:
+  username:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_text
+
+  gender:
+    type: categorical
+    values: ["female", "male", "other"]
+    influence_conversation: false
+    mappings:
+      - type: from_text
+
+  marital_status:
+    type: categorical
+    values: ["single", "married", "divorced"]
+    influence_conversation: false
+    mappings:
+      - type: from_text
+
+  dependents:
+    type: float
+    influence_conversation: false
+    mappings:
+      - type: from_text
+
+  education:
+    type: categorical
+    values: ["high school", "bachelor's degree", "master's degree", "phd", "uneducated"]
+    influence_conversation: false
+    mappings:
+      - type: from_text
+
+  age:
+    type: float
+    min_value: 18
+    max_value: 100
+    influence_conversation: false
+    mappings:
+      - type: from_text
+
+  job_title:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_text
+
+  annual_salary:
+    type: float
+    min_value: 0
+    influence_conversation: false
+    mappings:
+      - type: from_text
+
+  collateral_value:
+    type: float
+    min_value: 0
+    influence_conversation: false
+    mappings:
+      - type: from_text
+
+  savings_balance:
+    type: float
+    min_value: 0
+    influence_conversation: false
+    mappings:
+      - type: from_text
+
+  employment_type:
+    type: categorical
+    values: ["govt", "private", "startup", "contract", "unemployed"]
+    influence_conversation: false
+    mappings:
+      - type: from_text
+
+  employment_duration:
+    type: float
+    min_value: 0
+    influence_conversation: false
+    mappings:
+      - type: from_text
+
+  previous_loan_status:
+    type: categorical
+    values: ["fully paid", "ongoing", "defaulted"]
+    influence_conversation: false
+    mappings:
+      - type: from_text
+
+  previous_loan_amount:
+    type: float
+    min_value: 0
+    influence_conversation: false
+    mappings:
+      - type: from_text
+
+  monthly_emi:
+    type: float
+    min_value: 0
+    influence_conversation: false
+    mappings:
+      - type: from_text
+
+  loan_purpose:
+    type: categorical
+    values: ["home", "education", "vehicle", "personal", "business", "agriculture"]
+    influence_conversation: false
+    mappings:
+      - type: from_text
+
+  loan_amount:
+    type: float
+    min_value: 0
+    influence_conversation: false
+    mappings:
+      - type: from_text
+
+  repayment_term:
+    type: float
+    min_value: 0
+    influence_conversation: false
+    mappings:
+      - type: from_text
+
+  additional_income:
+    type: float
+    min_value: 0
+    influence_conversation: false
+    mappings:
+      - type: from_text
+
+  credit_cards:
+    type: float
+    min_value: 0
+    influence_conversation: false
+    mappings:
+      - type: from_text
+
+  credit_utilization:
+    type: float
+    min_value: 0
+    max_value: 100
+    influence_conversation: false
+    mappings:
+      - type: from_text
+
+  late_payment_history:
+    type: bool
+    influence_conversation: false
+    mappings:
+      - type: from_text
+
+  loan_insurance:
+    type: bool
+    influence_conversation: false
+    mappings:
+      - type: from_text
+
+forms:
+  loan_application_form:
+    required_slots:
+      - username
+      - gender
+      - marital_status
+      - dependents
+      - education
+      - age
+      - job_title
+      - annual_salary
+      - collateral_value
+      - savings_balance
+      - employment_type
+      - employment_duration
+      - previous_loan_status
+      - previous_loan_amount
+      - monthly_emi
+      - loan_purpose
+      - loan_amount
+      - repayment_term
+      - additional_income
+      - credit_cards
+      - credit_utilization
+      - late_payment_history
+      - loan_insurance
+
+responses:
+  # Basic Conversation Responses
+  utter_greet:
+    - text: "Hello! I'm the Loan Eligibility Assistant. Would you like to begin your loan check?"
+  
+  utter_iamabot:
+    - text: "I am a virtual assistant here to help you with your loan-related queries and applications. How can I assist you today?"
+    - text: "I'm an AI assistant designed to help you with loan applications and information. What can I help you with?"
+  
+  utter_loan_closure_info:
+    - text: |-
+        To close your loan, please follow these steps:
+        1. Submit a loan closure request through our app or website
+        2. Clear any pending dues or EMIs
+        3. We'll process your request within 2-3 business days
+        4. You'll receive a No Dues Certificate upon completion
+        
+        Would you like me to guide you through any of these steps?
+  
+  utter_required_documents:
+    - text: |-
+        For loan applications, you'll typically need:
+        - Identity Proof (Aadhaar, PAN, Voter ID, etc.)
+        - Address Proof (Utility bill, Passport, etc.)
+        - Income Documents (Salary slips, bank statements, ITR)
+        - Employment Proof (Offer letter, employment certificate)
+        
+        The exact documents may vary based on loan type. Would you like details for a specific loan type?
+  
+  utter_eligibility_age:
+    - text: |-
+        The standard age criteria for loans are:
+        - Minimum age: 21 years
+        - Maximum age: 60 years (or retirement age + 5 years for salaried individuals)
+        - Co-applicant can be added to extend eligibility
+  
+  utter_eligibility_income:
+    - text: |-
+        The minimum income requirement varies by loan type and lender. Generally:
+        - Personal Loans: ₹15,000+ monthly income
+        - Home Loans: ₹25,000+ monthly income
+        - Business Loans: Varies based on business type and turnover
+  
+  utter_application_status:
+    - text: "I can help you check your application status. Please provide your application reference number."
+  
+  utter_thank_you:
+    - text: "You're welcome! Is there anything else I can help you with?"
+    - text: "Happy to help! Let me know if you have any other questions."
+  
+  utter_out_of_scope:
+    - text: "I'm sorry, I can only assist with loan-related queries. For other matters, please contact our customer support."
+
+  utter_goodbye:
+    - text: "Goodbye! Feel free to return if you have more questions about loans."
+
+  utter_ask_username:
+    - text: "Please enter your full name."
+
+  utter_ask_gender:
+    - text: "Select your gender: Female, Male, or Other?"
+
+  utter_ask_marital_status:
+    - text: "What is your marital status? (Single/Married/Divorced)"
+
+  utter_ask_dependents:
+    - text: "How many dependents do you have?"
+
+  utter_ask_education:
+    - text: "What is your highest education level? (High school, Bachelor's degree, Master's degree, PhD, Uneducated)"
+
+  utter_ask_age:
+    - text: "Please enter your age."
+
+  utter_ask_job_title:
+    - text: "What is your job title?"
+
+  utter_ask_annual_salary:
+    - text: "What is your annual salary?"
+
+  utter_ask_collateral_value:
+    - text: "If providing collateral, enter its approximate market value."
+
+  utter_ask_savings_balance:
+    - text: "What is your current savings/bank balance?"
+
+  utter_ask_employment_type:
+    - text: "What is your employment type? (Govt, Private, Startup, Contract, Unemployed)"
+
+  utter_ask_employment_duration:
+    - text: "If contract-based, how many years of employment have you completed?"
+
+  utter_ask_previous_loan_status:
+    - text: "Have you taken any loans before? (Fully paid, Ongoing, Defaulted)"
+
+  utter_ask_previous_loan_amount:
+    - text: "What was your previous loan amount?"
+
+  utter_ask_monthly_emi:
+    - text: "What is your total EMI amount per month?"
+
+  utter_ask_loan_purpose:
+    - text: "What is the purpose of your loan? (Home, Education, Vehicle, Personal, Business, Agriculture)"
+
+  utter_ask_loan_amount:
+    - text: "How much loan amount are you applying for?"
+
+  utter_ask_repayment_term:
+    - text: "Over how many months do you want to repay the loan?"
+
+  utter_ask_additional_income:
+    - text: "Do you have any additional income sources? Please specify."
+
+  utter_ask_credit_cards:
+    - text: "How many credit cards do you own?"
+
+  utter_ask_credit_utilization:
+    - text: "What is your average credit utilization percentage?"
+
+  utter_ask_late_payment_history:
+    - text: "Do you have a history of late payments? (Yes/No)"
+
+  utter_ask_loan_insurance:
+    - text: "Do you currently have loan insurance? (Yes/No)"
+
+  # Loan Process Responses
+  utter_explain_loan_process:
+    - text: |-
+        Let's start your loan application. I'll need some information to check your eligibility.
+        The process is simple and will only take a few minutes.
+
+  # Eligibility Responses
+  # Fallback and Error Handling
+  utter_ask_rephrase:
+    - text: "I'm not sure I understand. Could you please rephrase your question in simpler words?"
+
+  utter_restarted:
+    - text: "I've restarted our conversation. How can I assist you with your loan needs today?"
+
+  # Confirmation Messages
+  utter_submit_confirmation:
+    - text: "Thanks {username}. I have all the details. I'll check eligibility and get back to you."
+
+
+actions:
+  # Form related actions
+  - validate_loan_application_form
+  - action_submit_loan_application
+  
+  # Custom actions
+  - action_restart
+  - action_check_application_status
+  - action_default_fallback
+  
+  # Form actions
+  - action_listen
+  - action_deactivate_loop
+  - action_revert_fallback_events
+  - action_default_ask_affirmation
+  - action_default_ask_rephrase
+  - action_back
+
+

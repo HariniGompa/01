@@ -1,0 +1,61 @@
+version: "3.1"
+
+rules:
+  # --- Form Activation Rules ---
+  - rule: Activate loan form
+    steps:
+      - intent: ask_loan_eligibility
+      - action: utter_explain_loan_process
+      - action: loan_application_form
+      - active_loop: loan_application_form
+
+  # --- Basic Conversation Rules ---
+  - rule: Greet user
+    steps:
+      - intent: greet
+      - action: utter_greet
+
+  - rule: Handle goodbye
+    steps:
+      - intent: goodbye
+      - action: utter_goodbye
+      - action: action_restart
+
+  - rule: Handle thank you
+    steps:
+      - intent: thank_you
+      - action: utter_thank_you
+
+  - rule: Handle bot challenge
+    steps:
+      - intent: bot_challenge
+      - action: utter_iamabot
+
+  # --- Information Requests ---
+  - rule: Provide loan closure info
+    steps:
+      - intent: ask_loan_closure_process
+      - action: utter_loan_closure_info
+
+  - rule: Provide required documents
+    steps:
+      - intent: ask_required_documents
+      - action: utter_required_documents
+
+  # --- Fallback Rules ---
+  - rule: Handle fallback
+    steps:
+      - intent: fallback
+      - action: utter_ask_rephrase
+
+  - rule: Handle out of scope
+    steps:
+      - intent: out_of_scope
+      - action: utter_out_of_scope
+
+  # --- Session Handling ---
+  - rule: Restart conversation
+    steps:
+      - intent: restart
+      - action: action_restart
+      - action: utter_restarted
