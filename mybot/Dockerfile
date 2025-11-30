@@ -1,13 +1,18 @@
 FROM rasa/rasa:3.6.20-full
 
 WORKDIR /app
+
+# Copy project files
 COPY . /app
 
-# Install actions dependencies
-RUN pip install --no-cache-dir -r actions/requirements.txt
+# Install dependencies for action server
+RUN pip install --no-cache-dir rasa-sdk==3.6.2 \
+    && pip install --no-cache-dir -r requirements.txt || true
 
-# Optional ports
-EXPOSE 5005 5055
+# Supervisord runs both Rasa + Actions
+COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
-# Shell form CMD (Render will inject $PORT)
-CMD rasa run --enable-api --cors "*" --endpoints endpoints.yml --port $PORT
+EXPOSE 5005
+EXPOSE 5055
+
+CMD ["supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
