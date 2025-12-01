@@ -9,4 +9,7 @@ RUN pip install --no-cache-dir rasa-sdk==3.6.2 && \
 
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
+EXPOSE 5005
+EXPOSE 5055
+
 CMD ["supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
